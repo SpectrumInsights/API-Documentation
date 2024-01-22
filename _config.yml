@@ -4,7 +4,7 @@ minima:
 
 title: API Documentation for Dementia and MCI Detection
 description: A detailed guide and reference to API
-url: "https://<username>.github.io/<repository>"
+url: "https://spectruminsights.github.io/API-Documentation"
 
 markdown: kramdown
 plugins:
