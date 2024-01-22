@@ -1,5 +1,17 @@
 # API Documentation for Dementia and MCI Detection
 
+## Table of Contents
+- [Introduction](#introduction)
+- [Requirements](#requirements)
+- [Workflow](#workflow)
+    - [Submitting a Recording](#submitting-a-recording)
+    - [Awaiting Results](#awaiting-results)
+- [Response Structure](#response-structure)
+- [Interpreting the result](#interpreting-the-is_ill_score)
+- [Security and Authorization](#security-and-authorization)
+- [Support and Contact](#support-and-contact)
+
+
 ## Introduction
 
 This document provides a comprehensive guide for integrating with the Spectrum Insights API, designed to detect symptoms of dementia and Mild Cognitive Impairment (MCI) based on a 6-second voice recording. The document details the process of submitting recordings, awaiting results, and interpreting the returned data.
@@ -11,29 +23,72 @@ This document provides a comprehensive guide for integrating with the Spectrum I
 
 ## Workflow
 
-### 1. Submitting a Recording
+### Submitting a Recording
 
-**Endpoint:** `POST https://masterhandlerapi.spectruminsights.net/api/recording/recording/`
+**Endpoint:**
+```http
+POST https://masterhandlerapi.spectruminsights.net/api/recording/recording
+```
 
 **Description:** Submit a .wav format recording. Receive a unique recording ID in response.
 
 **Headers:**
-```
+```http
 Authorization: Bearer YOUR_TOKEN
 ```
 
 **Body:**
 - .wav file containing the recording.
 
-### 2. Awaiting Results
+**Example Request:**
+```http
+POST /api/recording/recording/ HTTP/1.1
+Host: masterhandlerapi.spectruminsights.net
+Authorization: Bearer YOUR_TOKEN
+Content-Type: audio/wav
 
-**Endpoint:** `GET https://masterhandlerapi.spectruminsights.net/api/recording/recording/api/recording/recording/{id}`
+[Binary Audio Data]
+```
+**Example Response:**
+```json
+{
+  "recording_id": "12345",
+  "status": "recording_submitted"
+}
+```
 
-**Description:** Periodically query this endpoint, replacing `{id}` with the received recording ID, until the status changes to `results_ready`.
+### Awaiting Results
+
+**Endpoint:**
+```http
+GET https://masterhandlerapi.spectruminsights.net/api/recording/recording/api/recording/recording/{id}`
+```
+**Description:**
+
+Periodically query this endpoint, replacing `{id}` with the received recording ID, until the status changes to `results_ready`.
 
 **Headers:**
 ```
 Authorization: Bearer YOUR_TOKEN
+```
+
+**Example Request:**
+```http
+GET /api/recording/recording/12345 HTTP/1.1
+Host: masterhandlerapi.spectruminsights.net
+Authorization: Bearer YOUR_TOKEN
+```
+
+**Example Response:**
+```json
+{
+  "recording_id": "12345",
+  "created_date": "2024-01-22T15:30:00Z",
+  "is_ill": false,
+  "is_ill_proba": 0.05,
+  "is_ill_score": 9,
+  "status": "results_ready"
+}
 ```
 
 ## Response Structure
@@ -68,8 +123,9 @@ The value of `is_ill_score` determines the diagnosis:
 
 ## Support and Contact
 
-For technical issues or questions regarding integration, please contact our technical support team.
+For technical issues or questions regarding integration, please contact our technical support team at [Email Address](mailto:contact@vividmind.health)
 
 ---
+
 
 *Note: This documentation is intended for clients aiming to integrate the Spectrum Insights API for dementia and MCI diagnostics. Please thoroughly test all functionalities in a development environment before deploying in a production setting.*
