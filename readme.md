@@ -26,14 +26,14 @@ This document provides a comprehensive guide for integrating with the Spectrum I
 ### Submitting a Recording
 
 **Endpoint:**
-```http
+```
 POST https://masterhandlerapi.spectruminsights.net/api/recording/recording
 ```
 
 **Description:** Submit a .wav format recording. Receive a unique recording ID in response.
 
 **Headers:**
-```http
+```
 Authorization: Bearer YOUR_TOKEN
 ```
 
