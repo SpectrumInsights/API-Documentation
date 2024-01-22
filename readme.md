@@ -41,7 +41,7 @@ Authorization: Bearer YOUR_TOKEN
 - .wav file containing the recording.
 
 **Example Request:**
-```http
+```
 POST /api/recording/recording/ HTTP/1.1
 Host: masterhandlerapi.spectruminsights.net
 Authorization: Bearer YOUR_TOKEN
@@ -60,7 +60,7 @@ Content-Type: audio/wav
 ### Awaiting Results
 
 **Endpoint:**
-```http
+```
 GET https://masterhandlerapi.spectruminsights.net/api/recording/recording/api/recording/recording/{id}`
 ```
 **Description:**
@@ -73,7 +73,7 @@ Authorization: Bearer YOUR_TOKEN
 ```
 
 **Example Request:**
-```http
+```
 GET /api/recording/recording/12345 HTTP/1.1
 Host: masterhandlerapi.spectruminsights.net
 Authorization: Bearer YOUR_TOKEN
