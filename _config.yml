@@ -1,0 +1,12 @@
+theme: jekyll-theme-minimal
+minima:
+  skin: dark
+
+title: API Documentation for Dementia and MCI Detection
+description: A detailed guide and reference to API
+url: "https://<username>.github.io/<repository>"
+
+markdown: kramdown
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
