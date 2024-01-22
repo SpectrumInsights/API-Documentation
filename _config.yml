@@ -2,8 +2,9 @@ theme: jekyll-theme-minimal
 minima:
   skin: dark
 
-title: API Documentation for Dementia and MCI Detection
-description: A detailed guide and reference to API
+title: API Documentation
+logo: /assets/img/logo.png
+description: A detailed guide and reference to API for Dementia and MCI Detection
 url: "https://spectruminsights.github.io/API-Documentation"
 
 markdown: kramdown
