@@ -1,11 +1,10 @@
-theme: jekyll-theme-cayman
-remote_theme: pages-themes/cayman@v0.2.0
+remote_theme: pages-themes/minimal@v0.2.0
 
 title: API Documentation
 logo: /assets/img/logo.png
 description: A detailed guide and reference to API for Dementia and MCI Detection
 url: "https://spectruminsights.github.io/API-Documentation"
-show_downloads: false
+
 markdown: kramdown
 plugins:
   - jekyll-feed
