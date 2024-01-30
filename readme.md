@@ -180,6 +180,13 @@ Authorization: Bearer YOUR_TOKEN
       "definition": "Harmonic to Noise Ratio",
       "min_value": 0,
       "max_value": 10
+    },
+    {
+      "name": "Harmonics Tilt",
+      "value": 10.0,
+      "definition": "Harmonics Tilt",
+      "min_value": 0,
+      "max_value": 10
     }
   ]
 }
