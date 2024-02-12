@@ -23,7 +23,25 @@ This document provides a comprehensive guide for integrating with the Spectrum I
 
 ## Workflow
 
+### Configuring Recording Parameters Locally
+
+Before submitting a recording to our API, ensure that the recording is configured with the appropriate parameters on your side. This configuration is crucial for maintaining the quality and compatibility of the audio file with our analysis process.
+
+**Recommended Audio Configuration:**
+
+Ensure your recording library or tool is set with the following parameters before creating the `.wav` file:
+
+| Parameter   | Description                                         | Recommended Value |
+|-------------|-----------------------------------------------------|-------------------|
+| encoder     | The audio encoding format.                          | `AudioEncoder.wav`|
+| sampleRate  | The sample rate of the audio recording in Hz.       | `22050`           |
+| bitRate     | The bit rate of the audio recording in bits per second. | `352800`          |
+| numChannels | The number of audio channels (mono or stereo).     | `1` (Mono)        |
+
+These settings ensure that your audio recording is optimized for our API, facilitating accurate analysis.
+
 ### Submitting a Recording
+Once your audio file is properly configured and recorded, submit it to our API using the following endpoint:
 
 **Endpoint:**
 ```
