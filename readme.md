@@ -4,6 +4,7 @@
 - [Introduction](#introduction)
 - [Requirements](#requirements)
 - [Workflow](#workflow)
+    - [Configuring Recording Parameters Locally](#configuring-recording-parameters-locally)
     - [Submitting a Recording](#submitting-a-recording)
     - [Awaiting Results](#awaiting-results)
 - [Response Structure](#response-structure)
