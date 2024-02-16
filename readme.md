@@ -58,15 +58,22 @@ Authorization: Bearer YOUR_TOKEN
 
 **Body:**
 - .wav file containing the recording.
+- `age`: The age of the individual whose voice is being analyzed. This should be an integer representing the full years.
+- `sexAssignedAtBirth`: The biological sex assigned at birth of the individual whose voice is being analyzed. Acceptable values are "male" or "female".
+
 
 **Example Request:**
 ```
 POST /api/recording/recording/ HTTP/1.1
 Host: masterhandlerapi.spectruminsights.net
 Authorization: Bearer YOUR_TOKEN
-Content-Type: audio/wav
+Content-Type: multipart/form-data
 
-[Binary Audio Data]
+{
+  "age": 65,
+  "sexAssignedAtBirth": "female",
+  "sound_file": audioFile
+}
 ```
 **Example Response:**
 ```json
