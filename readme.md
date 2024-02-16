@@ -207,7 +207,11 @@ Authorization: Bearer YOUR_TOKEN
       "min_value": 0,
       "max_value": 10
     }
-  ]
+  ],
+  "result_explanation": {
+    "healthy_share": 0.4508,
+    "ill_share": 0.5492
+  }
 }
 ```
 
@@ -235,6 +239,9 @@ Each submission and status query will return a JSON response containing:
   - `definition`: A brief description of the metric.
   - `min_value`: The minimum possible value for this metric.
   - `max_value`: The maximum possible value for this metric.
+- `result_explanation`: object provides a statistical breakdown of the health status distribution among individuals with similar test results. This object contains two fields:
+  - `healthy_share`: A floating-point number representing the percentage of individuals considered to be healthy. The value is expressed as a decimal, where `1` represents 100%. For example, a value of `0.4508` translates to 45.08% of the group being healthy individuals.
+  - `ill_share`: A floating-point number representing the percentage of individuals who have mild cognitive impairment (MCI) or dementia. This value is also expressed as a decimal, where `1` represents 100%. For instance, a value of `0.5492` indicates that 54.92% of the group have MCI or dementia.
 
 #### Detailed Descriptions of `diagnosis_explainers` Metrics
 - `Frequency – Standard Deviation`: Shows how much the pitch of the sound changes in the recording. Higher values indicate greater pitch changes.
@@ -248,7 +255,7 @@ Each submission and status query will return a JSON response containing:
 - `Harmonic to Noise Ratio`: The ratio of pure sound to noise, including sounds like rustles produced by the patient.
 - `Harmonics Tilt`: A parameter showing how evenly the energy of the voice is distributed among different pitches. If the energy is evenly distributed, the graph will be flat. In individuals with speech issues, energy often concentrates in one place, causing the graph to tilt up or down.
 
-#### Possible response statuses:
+### Possible response statuses:
 
 - `recording_submitted`: The recording has been submitted.
 - `processing_in_progress`: Processing of the recording is underway.
