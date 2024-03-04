@@ -71,7 +71,7 @@ Content-Type: multipart/form-data
 
 {
   "age": 65,
-  "sexAssignedAtBirth": "female",
+  "sex_assigned_at_birth": "female",
   "sound_file": audioFile
 }
 ```
