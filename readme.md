@@ -28,7 +28,7 @@ This document provides a comprehensive guide for integrating with the Spectrum I
 
 Before submitting a recording to our API, ensure that the recording is configured with the appropriate parameters on your side. This configuration is crucial for maintaining the quality and compatibility of the audio file with our analysis process.
 
-**Recommended Audio Configuration:**
+**Obligatory Audio Configuration:**
 
 Ensure your recording library or tool is set with the following parameters before creating the `.wav` file:
 
